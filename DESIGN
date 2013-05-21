@@ -174,9 +174,9 @@ This will list all timestamps in the backup directory that match the current "te
 
 ./bacres.sh -R -t 20130328_070642 -r "/home/jbrennan/restores/" -p "test" -b "/home/jbrennan/backups"
 
-8. Restore just files matching *.JPG in timestamp:
+8. Restore just files matching *.jpg in timestamp:
 
-./bacres.sh -R -t 20130328_070642 -p "test" -b "/home/jbrennan/backups" -w "*.sh"
+./bacres.sh -R -t 20130328_070642 -p "test" -b "/home/jbrennan/backups" -w "*.jpg"
 
 BACKUP
 ======
