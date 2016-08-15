@@ -9,8 +9,8 @@ design.txt  - design document for this assignment
 bacres.sh   - bash script file that performs backup and restore operations
 bacres.conf - configuration file that is used by the bash script bacres.sh.
 
-DESIGN ASSUMPTIONS
-==================
+Design Assumptions
+-----
 1. If no input parameters are specified then the configuration file settings will always be used. The script will raise an error and exit if it cannot find the configuration file. 
 2. The default mode of the bacres.sh script is to perform a backup job. The mode can be changed using any of the following parameters -B,-R,-L,-D.
 3. The default configuration file is bacres.conf and it resides in the same directory as the script file bacres.sh.
