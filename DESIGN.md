@@ -4,7 +4,7 @@ DESIGN DOCUMENT
 ===============
 
 Resources
-=========
+--------
 design.txt  - design document for this assignment
 bacres.sh   - bash script file that performs backup and restore operations
 bacres.conf - configuration file that is used by the bash script bacres.sh.
@@ -24,8 +24,8 @@ Design Assumptions
 11. This script requires the default configuration file bacres.conf to exist. It is not necessary for this fie to contain any data. 
 12. It is possible to specify a custom configuration file. It is possible to override specific settings in the configuration file with command line arguments (i.e. mix command line and config file settings).
 
-PROGRAM FLOW
-============
+Program Flow
+--------
 
 The user input can be specified via the command line or from a configuration file. By default, the script will use the settings in the configuration file. The configuration file is called bacres.conf and it is assumed that this file exists in the same directory as the script bacres.sh. 
 
@@ -55,8 +55,8 @@ Now a decision is made about whether we need to perform a Restore task or a Back
     d. Check that the directory to restore the backup to was specified.
     e. Check that the directory to restore the backup to exists.
 
-CONFIG FILE SETTINGS
-====================
+Config File Settings
+-----
 
 The following settings need to be configured via the configuration (bacres.conf) file:
 
@@ -100,7 +100,7 @@ The following parameters will be available for the script resbac.sh:
 
  
 Backup Sample Usage Commands
-============================
+----------------------------
 
 1. Command Line Options:
 
@@ -140,7 +140,7 @@ N.B. It is possible to specify an alternate location for the configuration file 
 ./bacres.sh -C "/home/jbrennan/myconfig.conf"
 
 Restore Sample Usage
-===================
+-------------------
 
 Command Line Options:
 
@@ -179,24 +179,24 @@ This will list all timestamps in the backup directory that match the current "te
 ./bacres.sh -R -t 20130328_070642 -p "test" -b "/home/jbrennan/backups" -w "*.jpg"
 
 BACKUP
-======
+-----
 
 The backup function will take care of invoking the tar command to perform the backup. It will check the return
 code from the tar job to ensure that no errors occurred. The status code will be checked after calling tar to ensure it returned 0 (for success).
 
 RESTORE
-=======
+-------
 
 The restore function will take care of invoking the tar command to perform the restore. It will check the return
 code from the tar job to ensure that no errors occurred. The status code will be checked after calling tar to ensure it returned 0 (for success).
 
 LOGGING
-=======
+-------
 
 A helper function writeToLog() was created so that logging of errors and informational messages could be made more straightforward. When verbose mode is enabled (-V) all output is logged to the log file (standard output and standard error). When verbose mode is not enabled then only standard error is sent to the log file and to the screen. The following article was used to output both standard error and standard output to the log file and the screen at the same time. http://www.skorks.com/2009/09/using-bash-to-output-to-screen-and-file-at-the-same-time/. 
 
 RETURN CODES
-============
+-------
 
 The script return 0 if it completes without error. Otherwise the following error codes may be returned if an error condition is encountered:
 
